@@ -1,0 +1,140 @@
+// Welcome to a new dashboard
+// Check out the theme and change the colors via my variables to change colors, fonts etc
+
+$theme-color: royalblue;
+$theme-bg-color: #eee;
+
+$side-menu-bg-color: white;
+$side-menu-link-color: #999;
+$side-menu-link-hover-color: #333;
+$side-menu-link-active-color: black;
+$side-menu-title: black;
+
+$side-menu-link-300: 300;
+$side-menu-link-400: 400;
+$side-menu-link-500: 500;
+$side-menu-title-600: 600;
+
+$side-menu-width: 225px;
+$side-menu-height: 100vh;
+$side-menu-position: fixed;
+
+$content-header-bg-color: white;
+
+$content-header-height: 60px;
+$content-header-width: 100%;
+$content-header-position: fixed;
+
+$button-bg-color: royalblue;
+$button-color: white;
+$button-hover-color: rgba(white, 0.7);
+$button-padding: 10px 20px;
+$button-border-radius: 2px;
+
+
+body{
+  background: $theme-bg-color;
+}
+
+.side-menu{
+  background: $side-menu-bg-color;
+
+  width: $side-menu-width;
+  height: $side-menu-height;
+  position: $side-menu-position;
+  top: 0;
+  left: 0;
+
+  ul{
+    padding-left: 0px;
+
+    li{
+      padding: 5px 20px;
+      margin: 10px 0px;
+
+      a{
+        color: $side-menu-link-color;
+        font-weight: $side-menu-link-500;
+        text-decoration: none;
+
+        i{
+          margin-right: 5px;
+        }
+      }
+
+      &:hover{
+        a{
+          color: $side-menu-link-hover-color;
+        }
+      }
+
+      &.side-menu-title{
+        h5{
+          color: $side-menu-title;
+          font-weight: $side-menu-title-600;
+          text-transform: uppercase;
+          letter-spacing: 1.1px;
+          font-size: 12px;
+          margin-top: 0px;
+          margin-bottom: 0px;
+        }
+      }
+
+      &.active{
+        border-right: 4px solid $theme-color;
+
+        a{
+          color: $side-menu-link-active-color;
+        }
+      }
+    }
+  }
+}
+
+.page-content-wrapper{
+  margin-left: $side-menu-width;
+  position: relative;
+
+  .content-header{
+    background: $content-header-bg-color;
+    height: $content-header-height;
+    width: calc(100% - #{$side-menu-width});
+    position: $content-header-position;
+
+    ul{
+      padding-left: 0px;
+
+      li{
+        display: inline-block;
+        h4{
+          line-height: $content-header-height;
+          margin-top: 0px;
+        }
+
+        a{
+          float: right;
+          text-decoration: none;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  .page-content-break{
+    height: calc(#{$content-header-height} + 20px);
+  }
+}
+
+.button{
+  margin-top: 12px;
+  padding: $button-padding;
+  background: $button-bg-color;
+  color: $button-color;
+  border-radius: $button-border-radius;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+
+  &:hover, &:active, &:focus{
+    color: $button-hover-color;
+  }
+}
