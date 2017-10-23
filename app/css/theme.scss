@@ -1,7 +1,8 @@
 // Welcome to a new dashboard
 // Check out the theme and change the colors via my variables to change colors, fonts etc
 
-$theme-color: royalblue;
+$theme-color: #06357a;
+$theme-secondary-color: #fdb813;
 $theme-bg-color: #eee;
 
 $side-menu-bg-color: white;
@@ -15,17 +16,18 @@ $side-menu-link-400: 400;
 $side-menu-link-500: 500;
 $side-menu-title-600: 600;
 
-$side-menu-width: 225px;
+$side-menu-width: 0px;
 $side-menu-height: 100vh;
 $side-menu-position: fixed;
 
-$content-header-bg-color: white;
+$content-header-bg-color: $theme-color;
 
-$content-header-height: 60px;
+$content-header-height: 300px;
 $content-header-width: 100%;
 $content-header-position: fixed;
+$content-header-color: white;
 
-$button-bg-color: royalblue;
+$button-bg-color: $theme-color;
 $button-color: white;
 $button-hover-color: rgba(white, 0.7);
 $button-padding: 10px 20px;
@@ -44,6 +46,8 @@ body{
   position: $side-menu-position;
   top: 0;
   left: 0;
+
+  display: none;
 
   ul{
     padding-left: 0px;
@@ -101,14 +105,23 @@ body{
     width: calc(100% - #{$side-menu-width});
     position: $content-header-position;
 
-    ul{
+    .branding{
       padding-left: 0px;
 
       li{
         display: inline-block;
+        padding: 20px 0px;
         h4{
-          line-height: $content-header-height;
           margin-top: 0px;
+          color: $content-header-color;
+          font-weight: 300;
+          letter-spacing: 1px;
+          margin-bottom: 0px;
+
+          span{
+            color: rgba($theme-secondary-color, 1);
+            font-size: 14px;
+          }
         }
 
         a{

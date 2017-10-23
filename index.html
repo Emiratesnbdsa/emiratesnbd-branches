@@ -4,56 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Dashboard</title>
+  <title>Emirates NBD Branch Builder</title>
 
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="app/css/theme.min.css">
 </head>
 <body>
-  <aside class="side-menu">
-    <ul>
-      <li class="side-menu-brand">
-        <h3>Dashboard</h3>
-      </li>
-      <li class="side-menu-title">
-        <h5>My Products</h5>
-      </li>
-      <li class="active"><a href="">My Dashboard</a></li>
-      <li><a href="">FAB Products</a></li>
-      <li><a href="">Accounts</a></li>
-      <li><a href="">Debit Cards</a></li>
-      <li><a href="">Credit Cards</a></li>
-      <li><a href="">Loans</a></li>
-      <li><a href="">Deposits</a></li>
-      <li><a href="">Investments</a></li>
-      <li><a href="">Services</a></li>
-      <li><a href="">Apply for Products</a></li>
-
-      <li class="side-menu-title">
-        <h5>Transfers & Payments</h5>
-      </li>
-      <li><a href="">Transfer Money</a></li>
-      <li><a href="">Payments</a></li>
-      <li><a href="">Beneficiaries</a></li>
-
-      <li class="side-menu-title">
-        <h5>Other</h5>
-      </li>
-      <li><a href="">ATM & Branch Locator</a></li>
-      <li><a href="">Contact Us</a></li>
-    </ul>
-  </aside>
-
   <section class="page-content-wrapper">
     <div class="content-header">
-      <div class="container-fluid">
-        <ul>
-          <li class="col-md-10"><h4>My Dashboard</h4></li>
-          <li class="col-md-2">
-            <a href="#" class="button">Account Settings</a>
-          </li>
+      <div class="container">
+        <ul class="branding">
+          <li><h4>Emirates NBD <span>Digital Branch Builder</span></h4></li>
         </ul>
+
+        <form action="" class="row">
+          <div class="form-group col-md-6">
+            <select name="select-branch" id="branches" class="form-control"></select>
+          </div>
+          <div class="form-group col-md-6">
+            <select name="branch-type" id="branch-type" class="form-control">
+              <option value="0">Select A Branch Type</option>
+              <option value="Commercial">Commercial</option>
+              <option value="Souk">Souk</option>
+              <option value="Neighbourhood">Neighbourhood</option>
+              <option value="Mall">Mall</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6 hide branch-version-view">
+            <select name="branch-version" id="branch-version" class="form-control">
+              <option value="0">Select A Branch Version</option>
+              <option value="Digital">Fully Digital</option>
+              <option value="Digital-Hybrid">Digital/Hybrid</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="Normal-Hybrid">Normal/Hybrid</option>
+              <option value="Normal">Normal</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6 hide branch-tags-view">
+            <select id="branch-tags" class="" name="branch-tags[]" multiple="multiple" style="width: 100%;">
+              <<option value="">Branch Tag 1</option>
+              <option value="">Branch Tag 2</option>
+              <option value="">Branch Tag 3</option>
+              <option value="">Branch Tag 4</option>
+              <option value="">Branch Tag 5</option>
+              <option value="">Branch Tag 6</option>
+              <option value="">Branch Tag 7</option>
+              <option value="">Branch Tag 8</option>
+              <option value="">Branch Tag 9</option>
+              <option value="">Branch Tag 10</option>
+            </select>
+          </div>
+        </form>
       </div>
     </div>
     <div class="page-content-break"></div>
@@ -68,4 +72,25 @@
 
 <script src="node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+<script src="app/js/branches.js" charset="utf-8"></script>
+<script src="app/js/app.js" charset="utf-8"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.4/js/select2.min.js"></script>
+
+<!-- <script type="text/javascript">
+  $(document).ready(function(){
+    $("#branches").change(function() {
+      console.log('hello world');
+      var val = $(this).val();
+      $("#branch-type").html(options[val]);
+    });
+
+    var options = [
+      "<option value='test'>item1: test 1</option><option value='test2'>item1: test 2</option>",
+      "<option value='test'>item2: test 1</option><option value='test2'>item2: test 2</option>",
+      "<option value='test'>item3: test 1</option><option value='test2'>item3: test 2</option>"
+    ];
+  });
+</script> -->
 </html>
