@@ -24,6 +24,14 @@ $(document).ready(function(){
     }
   });
 
+  $('#branch-tags').change(function(){
+    selectedTag = $(this).val();
+
+    if (selectedTag == 'tag-something') {
+      console.log('You have selected a Tag');
+    }
+  });
+
   var listBranches = '<option selected="selected" value="0">Please Select a Branch</option>';
 
   for (var i = 0; i < branchData.Branches.length; i++) {
